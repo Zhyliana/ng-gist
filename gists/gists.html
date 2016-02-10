@@ -1,16 +1,23 @@
 <user-card class="gistCard col-xs-2" gist="gists[0]"></user-card>
 
 <div class="col-xs-8">
-  <gist-card ng-repeat="gist in gists | filter: searchText" gist="gist"></gist-card>
+  <gist-card ng-repeat="gist in gists | filter: searchText | orderBy: orderParam" gist="gist"></gist-card>
 </div>
 
 <div class="gistCard col-xs-2">
 
-  <div>Search Gists:
-    <input type="text" ng-model="searchText">
+  <div>
+    <div class="btn btn-info btn-lg">
+      New Gist
+    </div>
+    <br><br>
+    <input type="text" placeholder="Search Gists" ng-model="searchText">
     <br><br>
 
-  <div class="btn btn-info btn-lg">
-    New Gist
-  </div>
+    <select class="form-control" ng-model="orderParam">
+      <option value="" selected="selected">Order By</option>
+      <option value="created_at">Created Date</option>
+      <option value="updated_at">Last Updated</option>
+    </select>
+
 </div>
