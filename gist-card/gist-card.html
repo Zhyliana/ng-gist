@@ -1,0 +1,14 @@
+<div class="gistCard" ng-click="seeGist(gist.id)">
+  <div class="gistCard-rightCol col-xs-6">
+    <h3>
+      <span ng-if="!gist.public" class="glyphicon glyphicon-lock"></span>
+      {{::gist.description}}
+    </h3>
+    Comments: {{::gist.comments}}
+  </div>
+
+  <div class="col-xs-3">
+    <h5>Files</h5>
+    <div class="gistCard-rightCol" ng-repeat="file in gist.files">{{file.filename}}</div>
+  </div>
+</div>

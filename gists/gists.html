@@ -1,0 +1,16 @@
+<user-card class="gistCard col-xs-2" gist="gists[0]"></user-card>
+
+<div class="col-xs-8">
+  <gist-card ng-repeat="gist in gists | filter: searchText" gist="gist"></gist-card>
+</div>
+
+<div class="gistCard col-xs-2">
+
+  <div>Search Gists:
+    <input type="text" ng-model="searchText">
+    <br><br>
+
+  <div class="btn btn-info btn-lg">
+    New Gist
+  </div>
+</div>

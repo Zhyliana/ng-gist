@@ -1,0 +1,45 @@
+<h2>New Gist</h2>
+
+<div class="gistPage" ng-form="gist" name="gistForm">
+  <user-card class="col-xs-3" gist="gist"></user-card>
+  <div class="gistCard-rightCol col-xs-6">
+    <div class="form-group">
+      <input ng-model="gist.description"
+             placeholder="Description" type="text"
+             class="form-control form-gistDesc editableField" required>
+    </div>
+    <br><br>
+
+
+    <h2>Files
+      <div class="btn btn-info" ng-click="newFile()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </div>
+    </h2>
+
+    <div ng-model="gist.files" ng-repeat="i in getNumber(fileCount) track by $index">
+      <div class="form-group">
+        <input ng-model="gist.files[$index].filename" type="text"
+               class="form-control"
+               placeholder="File Name" required>
+      </div>
+      <textarea rows="10" type="text" placeholder="File Content"
+                class="form-fileContent" ng-model="gist.files[$index].content" required>
+      </textarea>
+    </div>
+  </div>
+
+  <div class="col-xs-3 col-xs-offset-1">
+    <button class="btn  btn-info"
+            ng-disabled="gistForm.$invalid"
+            ng-click="createGist()" ng-submit="gistForm">
+      Update Gist
+    </button>
+    <div>
+      <span ng-if="gist.public === false" class="glyphicon glyphicon-lock"></span>
+      <label> Private: </label>
+      <input ng-model="gist.public" type="checkbox"
+             ng-true-value="false" ng-false-value="true">
+    </div>
+  </div>
+</div>
