@@ -9,7 +9,7 @@
   "dependencies": {
     "bower": "^1.3.12"
   },
-  "description": "A coding sample for Clariture",
+  "description": "A coding sample for Joyable",
   "repository": "git@github.com:Zhyliana/ng-gist.git",
   "devDependencies": {
     "karma": "^0.12.24",

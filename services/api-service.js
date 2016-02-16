@@ -1,7 +1,7 @@
 function api($http){
-  var accessToken = '?access_token=9fc5ba413b1cab18821c08bff51288c8546c3c58';
+  var accessToken = '?access_token=a9ec7903a0ffdf8025dcc90e89e86933bed4a185';
   function getGists(){
-    var url = 'https://api.github.com/users/clariture-test/gists' + accessToken;
+    var url = 'https://api.github.com/users/joyapug/gists' + accessToken;
     return $http.get(url).then(function(response) {
       return response.data;
     });
